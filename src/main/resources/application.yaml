@@ -1,0 +1,14 @@
+spring:
+  application:
+    name:Keycloak
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: spring-keycloak
+            client-secret: VwOLNnoHDTTga0HTi7IQ1wIzL5agYrtt
+            scope: openid+profile+email
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/myrealm
