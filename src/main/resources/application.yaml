@@ -6,9 +6,23 @@ spring:
       client:
         registration:
           keycloak:
-            client-id: spring-keycloak
-            client-secret: VwOLNnoHDTTga0HTi7IQ1wIzL5agYrtt
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
             scope: openid+profile+email
         provider:
           keycloak:
-            issuer-uri: http://localhost:8080/realms/myrealm
+            issuer-uri: ${ISSUER_URI}
+      resourceserver:
+        jwt:
+          jwt-set-uri: ${JWT_SET_URI}
+
+server:
+  port: 8082
+  ssl:
+    client-auth: need
+    enabled: true
+
+    key-store: ${KEY_STORE_PATH}
+    key-store-password: ${KEY_STORE_PASSWORD}
+    trust-store: ${TRUST_STORE_PATH}
+    trust-store-password: ${TRUST_STORE_PASSWORD}
