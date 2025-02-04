@@ -9,7 +9,7 @@ services:
       - "--https-key-store-password=password"
       - "--https-trust-store-file=/opt/keycloak/conf/server-truststore.p12"
       - "--https-trust-store-password=password"
-      - "--hostname=0.0.0.0"
+      - "--hostname=192.168.1.7"
       - "--import-realm"
     ports:
       - 8443:8443
